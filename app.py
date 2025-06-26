@@ -5,7 +5,10 @@ from typing import List
 from routes import router
 from descargar_modelos import descargar_modelo
 
-app = FastAPI() 
+app = FastAPI()
+@app.get("/")
+def root():
+    return {"message": "Hola desde Azure"}
 BUCKET = "mis-modelos-tesis"
 descargar_modelo(BUCKET, 'modelos/randomForest_problematica/', 'modelos/randomForest_problematica')
 
