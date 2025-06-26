@@ -5,7 +5,7 @@ s3 = boto3.client('s3')
 session = boto3.session.Session(
     aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
     aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
-    region_name="us-east-1"  # Cambia si tu bucket está en otra región
+    region_name="us-east-2"  # Cambia si tu bucket está en otra región
 )
 
 s3 = session.client('s3')
