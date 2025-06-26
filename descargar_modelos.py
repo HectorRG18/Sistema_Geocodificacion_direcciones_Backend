@@ -16,7 +16,7 @@ def descargar_modelo(bucket_name, carpeta_s3, carpeta_local):
     respuesta = s3.list_objects_v2(Bucket=bucket_name, Prefix=carpeta_s3)
 
     if 'Contents' not in respuesta:
-        print(f"⚠️ No se encontró la carpeta: {carpeta_s3}")
+        print(f" No se encontró la carpeta: {carpeta_s3}")
         return
 
     for obj in respuesta['Contents']:
