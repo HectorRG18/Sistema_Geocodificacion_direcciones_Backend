@@ -1,7 +1,14 @@
 import boto3
 import os
 
-s3 = boto3.client('s3') 
+s3 = boto3.client('s3')
+session = boto3.session.Session(
+    aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
+    aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
+    region_name="us-east-1"  # Cambia si tu bucket está en otra región
+)
+
+s3 = session.client('s3')
 BUCKET = "mis-modelos-tesis"
 
 def descargar_modelo(bucket_name, carpeta_s3, carpeta_local):
